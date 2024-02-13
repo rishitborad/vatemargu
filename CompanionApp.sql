@@ -212,14 +212,9 @@ CREATE TABLE IF NOT EXISTS `airport_list` (
   `lat` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lon` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `numAirports` int DEFAULT NULL,
-  `city` enum('true','false') COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `city` enum('true','false') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  INDEX idx_airport_code (code)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-SELECT * FROM information_schema.tables WHERE table_schema = 'travel_companion' AND table_name = 'airport_list';
-
-GRANT SELECT ON travel_companion.airport_list TO 'root'@'localhost';
-
-CREATE INDEX idx_airport_code ON airport_list (code);
 
 ALTER TABLE flight
 ADD FOREIGN KEY (departure_airport_code) REFERENCES airport_list(code);
