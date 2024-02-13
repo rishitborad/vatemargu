@@ -3,5 +3,6 @@ from . import views
 
 #URLConf
 urlpatterns = [
-    path('hello/', views.say_hello)
+    path('h', views.say_hello),
+    path('airport_list/', views.display, name='display')
 ]

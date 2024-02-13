@@ -126,7 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'travel_companion',       # Replace with your database name
+        'NAME': 'travel_companion',         # Replace with your database name
         'USER': 'root',                     # Replace with your MySQL username
         'PASSWORD': 'lemon123',             # Replace with your MySQL password
         'HOST': 'localhost',                # Leave as localhost if MySQL is running locally
